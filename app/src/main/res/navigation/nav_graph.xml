@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.example.kk.fragments.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        tools:layout="@layout/fragment_dashboard"
+        android:name="com.example.kk.fragments.Dashboard"
+        android:label="Dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        tools:layout="@layout/fragment_notification"
+        android:name="com.example.kk.fragments.NotificationFragment"
+        android:label="Notification" >
+
+        <argument
+            android:name="amount"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.example.kk.fragments.CardFragment"
+        android:label="CardFragment" />
+
+</navigation>
+
+
